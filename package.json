@@ -1,0 +1,26 @@
+{
+  "name": "disnode-logger",
+  "version": "0.0.1",
+  "description": "Logging Tool",
+  "main": "logging.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victoryforphil/disnode-logger.git"
+  },
+  "keywords": [
+    "Logging"
+  ],
+  "author": "Alex Carter & Garrett Nicholas (DisnodeTeam)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victoryforphil/disnode-logger/issues"
+  },
+  "homepage": "https://github.com/victoryforphil/disnode-logger#readme",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "pmx": "^1.0.4"
+  }
+}
