@@ -21,7 +21,7 @@ function TimeCode(){
   return finalString;
 }
 
-exports.Info = function (caller, event, data) {
+exports.Info = function (caller, event, data, log = true) {
   var msg = "["+colors.cyan(" INFO  ")+"] "+colors.magenta(TimeCode()) +
     " [" +
     colors.grey(caller) + " " +
@@ -29,10 +29,12 @@ exports.Info = function (caller, event, data) {
     "] " + data;
   var logmsg = "[ INFO  ] "+ TimeCode() + " [" + caller + " " + "(" + event + ")" + "] " + data;
   console.log(msg);
-  saveLog(logmsg);
+  if(log){
+    saveLog(logmsg);
+  }
 };
 
-exports.Error= function (caller, event, data) {
+exports.Error= function (caller, event, data, log = true) {
   var msg = "["+colors.red(" ERROR ")+"] "+colors.magenta(TimeCode()) +
     " [" +
     colors.grey(caller) + " " +
@@ -41,10 +43,12 @@ exports.Error= function (caller, event, data) {
   var logmsg = "["+" ERROR "+"] "+ TimeCode() + " [" + caller + " " + "(" + event + ")" + "] " + data;
   console.log(msg);
   pmx.notify(msg);
-  saveLog(logmsg);
+  if(log){
+    saveLog(logmsg);
+  }
 };
 
-exports.Warning= function (caller, event, data) {
+exports.Warning= function (caller, event, data, log = true) {
   var msg = "["+colors.yellow("WARNING")+"] "+colors.magenta(TimeCode()) +
     " [" +
     colors.grey(caller) + " " +
@@ -52,14 +56,18 @@ exports.Warning= function (caller, event, data) {
     "] " + colors.yellow(data);
   var logmsg = "["+"WARNING"+"] "+ TimeCode() + " [" + caller + " " + "(" + event + ")" + "] " + data;
   console.log(msg);
-  saveLog(logmsg);
+  if(log){
+    saveLog(logmsg);
+  }
 };
 
-exports.Success= function (caller, event, data) {
+exports.Success= function (caller, event, data, log = true) {
   var msg = "["+colors.green("SUCCESS")+"] "+ colors.magenta(TimeCode()) + " [" + colors.grey(caller) + " " + colors.cyan("(" + event + ")") + "] " + colors.green(data);
   var logmsg = "["+"SUCCESS"+"] "+ TimeCode() + " [" + caller + " " + "(" + event + ")" + "] " + data;
   console.log(msg);
-  saveLog(logmsg);
+  if(log){
+    saveLog(logmsg);
+  }
 };
 
 exports.AddRemoteVal = function(name, val){
